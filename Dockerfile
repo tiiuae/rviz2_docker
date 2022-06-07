@@ -6,6 +6,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* 
 
 COPY rviz /rviz
+COPY config/menu.xml /etc/xdg/openbox/menu.xml
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
