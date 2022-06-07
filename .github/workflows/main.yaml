@@ -15,7 +15,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ghcr.io/fly4future/rviz2-docker
+          images: ghcr.io/tiiuae/tii-rviz2
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
