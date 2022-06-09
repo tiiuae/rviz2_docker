@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]]; then 
+  echo "Append uav_name to launch default config"
+  exit 1
+fi
+
+rviz_template=/rviz/default.rviz
+tmp_rviz=/tmp/rviz.rviz
+
+
+cp $rviz_template $tmp_rviz
+sed -i -e "s/cze[0-9]*/$1/g" $tmp_rviz
+rviz2 -d $tmp_rviz
