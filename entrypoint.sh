@@ -2,7 +2,7 @@
 source /opt/ros/galactic/setup.bash
 
 # start X11 server
-Xvfb :0 -screen 0 1920x1080x24 &
+Xvfb :0 -screen 0 1920x1080x16 &
 
 # start VNC server
 x11vnc -display :0 -rfbport 3000 -forever -xkb -noxrecord -noxfixes -noshm -nopw -wait 5 -shared &

@@ -6,7 +6,6 @@ COPY config/menu.xml /etc/xdg/openbox/menu.xml
 
 ENV PATH=${PATH}:/scripts
 
-
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
 
