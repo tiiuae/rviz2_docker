@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /other_drones_path1
         - /costmap1
       Splitter Ratio: 0.5
     Tree Height: 523
@@ -26,7 +27,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: raw_rplidar
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -162,7 +163,7 @@ Visualization Manager:
       Enabled: true
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
-      Length: 0.30000001192092896
+      Length: 0.5
       Line Style: Lines
       Line Width: 0.029999999329447746
       Name: other_drones_path
@@ -171,8 +172,8 @@ Visualization Manager:
         Y: 0
         Z: 0
       Pose Color: 255; 85; 255
-      Pose Style: Arrows
-      Radius: 0.029999999329447746
+      Pose Style: Axes
+      Radius: 0.20000000298023224
       Shaft Diameter: 0.10000000149011612
       Shaft Length: 0.10000000149011612
       Topic:
@@ -185,9 +186,9 @@ Visualization Manager:
       Value: true
     - Class: octomap_rviz_plugins/OccupancyGrid
       Enabled: true
-      Max. Height Display: inf
+      Max. Height Display: 3.4028234663852886e+38
       Max. Octree Depth: 16
-      Min. Height Display: -inf
+      Min. Height Display: -3.4028234663852886e+38
       Name: octomap
       Topic:
         Depth: 5
