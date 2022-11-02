@@ -6,8 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /other_drones_path1
-        - /costmap1
+        - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 523
   - Class: rviz_common/Selection
@@ -31,6 +30,43 @@ Panels:
 Visualization Manager:
   Class: ""
   Displays:
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        cze01/fcu:
+          Value: true
+        cze01/frd_fcu:
+          Value: false
+        cze01/garmin:
+          Value: false
+        cze01/home_position_ned:
+          Value: false
+        cze01/ned_origin:
+          Value: false
+        cze01/rplidar:
+          Value: false
+        world:
+          Value: true
+      Marker Scale: 5
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        world:
+          cze01/ned_origin:
+            cze01/frd_fcu:
+              cze01/fcu:
+                cze01/garmin:
+                  {}
+                cze01/rplidar:
+                  {}
+            cze01/home_position_ned:
+              {}
+      Update Interval: 0
+      Value: true
     - Alpha: 0.5
       Cell Size: 1
       Class: rviz_default_plugins/Grid
@@ -48,45 +84,6 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
-      Value: true
-    - Angle Tolerance: 0.10000000149011612
-      Class: rviz_default_plugins/Odometry
-      Covariance:
-        Orientation:
-          Alpha: 0.5
-          Color: 255; 255; 127
-          Color Style: Unique
-          Frame: Local
-          Offset: 1
-          Scale: 1
-          Value: true
-        Position:
-          Alpha: 0.30000001192092896
-          Color: 204; 51; 204
-          Scale: 1
-          Value: true
-        Value: true
-      Enabled: true
-      Keep: 1
-      Name: Odometry
-      Position Tolerance: 0.10000000149011612
-      Shape:
-        Alpha: 1
-        Axes Length: 1
-        Axes Radius: 0.10000000149011612
-        Color: 255; 25; 0
-        Head Length: 0.30000001192092896
-        Head Radius: 0.10000000149011612
-        Shaft Length: 1
-        Shaft Radius: 0.05000000074505806
-        Value: Arrow
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /cze01/odometry_publisher/local_odom_out
       Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
@@ -203,7 +200,7 @@ Visualization Manager:
       Voxel Rendering: Occupied Voxels
     - Alpha: 0.699999988079071
       Class: rviz_default_plugins/Map
-      Color Scheme: map
+      Color Scheme: costmap
       Draw Behind: false
       Enabled: true
       Name: costmap
@@ -221,6 +218,32 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /cze01/global_costmap/costmap_updates
       Use Timestamp: false
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Planning Binary Tree
+      Namespaces:
+        {}
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /cze01/planner_server/binary_tree_markers_out
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Goal Marker
+      Namespaces:
+        {}
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /cze01/planner_server/goal_markers_out
       Value: true
   Enabled: true
   Global Options:
@@ -283,10 +306,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.16539762914180756
+      Pitch: 0.28539761900901794
       Target Frame: cze01/fcu
       Value: ThirdPersonFollower (rviz_default_plugins)
-      Yaw: 3.6717734336853027
+      Yaw: 3.581773042678833
     Saved: ~
 Window Geometry:
   Displays:
