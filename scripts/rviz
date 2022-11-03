@@ -8,9 +8,8 @@ elif [[ $# -eq 0 && -z "$DRONE_DEVICE_ID" ]] ; then
   echo "extra argument not provided and DRONE_DEVICE_ID not assigned, quitting"
   exit 1
 else 
-  echo "using $1 (you can use DRONE_DEVICE_ID if provided)"
+  echo "using $DRONE_DEVICE_ID"
 fi
-
 
 rviz_template=/rviz/default.rviz
 tmp_rviz=/tmp/rviz.rviz
