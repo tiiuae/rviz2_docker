@@ -1,0 +1,4 @@
+#!/bin/bash
+ros2 service call /$DRONE_DEVICE_ID/drone_interface/drone_interface/set_geofence fognav_msgs/srv/SetGeofence '{"geofences": [{header: {frame_id: "geographic_world"}, "corners": [{x: 24.436392, y: 54.613834, z: 0.0}, {x: 24.436685, y: 54.614069, z: 0.0}, {x: 24.436607, y: 54.614208, z: 0.0}, {x: 24.436319, y: 54.613960, z: 0.0}]}]}'
+
+#ros2 service call /$DRONE_DEVICE_ID/drone_interface/drone_interface/set_geofence fognav_msgs/srv/SetGeofence '{"geofences": [{header: {frame_id: "world"}, "corners": [{x: 26.93, y: 16.23, z: 0.0}, {x: 18.59, y: 27.32, z: 0.0}, {x: -7.23, y: 6.69, z: 0.0}, {x: -4.44, y: -7.19, z: 0.0}]}]}'
