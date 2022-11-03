@@ -1,14 +1,21 @@
 #!/bin/bash
 
-if [[ $# -eq 0 ]]; then 
-  echo "Append uav_name to launch default config"
+NAME=$DRONE_DEVICE_ID
+if [[ $# -eq 1 ]]; then 
+  echo "using $1 (you can use DRONE_DEVICE_ID if provided)"
+  NAME=$1
+elif [[ $# -eq 0 && -z "$DRONE_DEVICE_ID" ]] ; then 
+  echo "extra argument not provided and DRONE_DEVICE_ID not assigned, quitting"
   exit 1
+else 
+  echo "using $1 (you can use DRONE_DEVICE_ID if provided)"
 fi
+
 
 rviz_template=/rviz/default.rviz
 tmp_rviz=/tmp/rviz.rviz
 
 
 cp $rviz_template $tmp_rviz
-sed -i -e "s/cze[0-9]*/$1/g" $tmp_rviz
+sed -i -e "s/cze[0-9]*/$NAME/g" $tmp_rviz
 rviz2 -d $tmp_rviz
