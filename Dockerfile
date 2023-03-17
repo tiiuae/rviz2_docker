@@ -1,4 +1,4 @@
-FROM ghcr.io/tiiuae/fog-ros-baseimage:sha-0c7c9f3
+FROM ghcr.io/tiiuae/fog-ros-baseimage-builder:sha-11bedfa
 
 COPY scripts /scripts
 COPY rviz /rviz
