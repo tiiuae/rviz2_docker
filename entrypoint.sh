@@ -1,5 +1,5 @@
 #!/bin/bash
-source /opt/ros/galactic/setup.bash
+source /opt/ros/humble/setup.bash
 
 # make VNC port configurable (prepare for moving to a dedicated port)
 vnc_port="${VNC_PORT:=3000}"
